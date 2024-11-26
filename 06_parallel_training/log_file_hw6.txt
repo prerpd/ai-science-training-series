@@ -1,0 +1,562 @@
+[dist_info]:
+  • DEVICE=cuda
+  • DEVICE_ID=cuda:0
+  • DISTRIBUTED_BACKEND=nccl
+  • GPUS_PER_NODE=8
+  • HOSTS=['sophia-gpu-03.lab.alcf.anl.gov']
+  • HOSTFILE=/var/spool/pbs/aux/38427.sophia-pbs-01.lab.alcf.anl.gov
+  • HOSTNAME=sophia-gpu-03.lab.alcf.anl.gov
+  • LOCAL_RANK=0
+  • MACHINE=Sophia
+  • NUM_NODES=1
+  • NGPUS=8
+  • NGPUS_AVAILABLE=8
+  • NODE_ID=0
+  • RANK=0
+  • SCHEDULER=LOCAL
+  • WORLD_SIZE_TOTAL=8
+  • WORLD_SIZE_IN_USE=8
+  • LAUNCH_CMD=None
+
+
+[2024-11-26 08:25:46.390796][INFO][dist.py:728] - [0/8] Using device='cuda' with backend='DDP' + 'nccl' for distributed training.
+[2024-11-26 08:25:46.392985][INFO][dist.py:348] - [device='cuda'][rank=0/7][local_rank=0/7][node=0/0]
+[2024-11-26 08:25:46.393551][WARNING][dist.py:352] - Using [8 / 8] available "cuda" devices !!
+[2024-11-26 08:25:46.936366][INFO][dist.py:348] - [device='cuda'][rank=1/7][local_rank=1/7][node=0/0]
+[2024-11-26 08:25:46.951479][INFO][dist.py:348] - [device='cuda'][rank=4/7][local_rank=4/7][node=0/0]
+[2024-11-26 08:25:46.961380][INFO][dist.py:348] - [device='cuda'][rank=2/7][local_rank=2/7][node=0/0]
+[2024-11-26 08:25:47.008629][INFO][dist.py:348] - [device='cuda'][rank=5/7][local_rank=5/7][node=0/0]
+[2024-11-26 08:25:47.019729][INFO][dist.py:348] - [device='cuda'][rank=6/7][local_rank=6/7][node=0/0]
+[2024-11-26 08:25:47.170953][INFO][dist.py:348] - [device='cuda'][rank=3/7][local_rank=3/7][node=0/0]
+[2024-11-26 08:25:47.171150][INFO][dist.py:348] - [device='cuda'][rank=7/7][local_rank=7/7][node=0/0]
+[2024-11-26 08:25:49.131902][INFO][configs.py:317] - Loading train from /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/data/shakespeare_char/train.bin
+[2024-11-26 08:25:49.134395][INFO][configs.py:317] - Loading val from /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/data/shakespeare_char/val.bin
+[2024-11-26 08:25:49.136313][INFO][configs.py:442] - Tokens per iteration: 524,288
+[2024-11-26 08:25:49.136904][INFO][configs.py:465] - Using self.ptdtype=torch.float16 on self.device_type='cuda'
+[2024-11-26 08:25:49.137364][INFO][configs.py:471] - Initializing a new model from scratch
+[2024-11-26 08:25:49.138022][INFO][dist.py:882] - Setting up wandb from rank: 0
+[2024-11-26 08:25:49.138403][INFO][dist.py:883] - Using: WB PROJECT: WordPlay
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+[2024-11-26 08:25:51.234981][CRITICAL][trainer.py:318] - "devid='cuda:3'"
+[2024-11-26 08:25:51.234994][CRITICAL][trainer.py:318] - "devid='cuda:7'"
+[2024-11-26 08:25:51.235008][CRITICAL][trainer.py:318] - "devid='cuda:1'"
+[2024-11-26 08:25:51.235036][CRITICAL][trainer.py:318] - "devid='cuda:4'"
+[2024-11-26 08:25:51.235439][CRITICAL][trainer.py:318] - "devid='cuda:6'"
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+[2024-11-26 08:25:51.241514][CRITICAL][trainer.py:318] - "devid='cuda:5'"
+[2024-11-26 08:25:51.241695][CRITICAL][trainer.py:318] - "devid='cuda:2'"
+wandb: Tracking run with wandb version 0.17.6
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: WARNING URL not available in offline run
+[2024-11-26 08:25:52.180197][INFO][dist.py:908] - W&B RUN: [](None)
+[2024-11-26 08:25:52.184465][INFO][dist.py:304] - Updating wandb.run:  config with "DIST_INFO"
+[2024-11-26 08:25:52.188893][INFO][dist.py:936] - Running on machine='Sophia'
+[2024-11-26 08:25:52.190440][WARNING][__main__.py:93] - {
+    "train": {
+        "framework": "pytorch",
+        "backend": "DDP",
+        "device": null,
+        "seed": null,
+        "port": null,
+        "ds_config_path": null,
+        "precision": null,
+        "ngpus": null,
+        "use_wandb": true,
+        "eval_interval": 100,
+        "log_interval": 10,
+        "eval_iters": 200,
+        "eval_only": false,
+        "always_save_checkpoint": false,
+        "init_from": "scratch",
+        "wandb_project": "WordPlay",
+        "max_iters": 1000,
+        "warmup_iters": 100,
+        "dtype": "bf16",
+        "compile": false
+    },
+    "model": {
+        "n_layer": 12,
+        "n_head": 12,
+        "n_embd": 768,
+        "batch_size": 64,
+        "block_size": 1024,
+        "activation": "gelu",
+        "dropout": 0.0,
+        "bias": false,
+        "vocab_size": 65
+    },
+    "data": {
+        "dataset": "shakespeare_char",
+        "out_dir": "out-shakespeare-char",
+        "root_path": null
+    },
+    "optimizer": {
+        "gas": 1,
+        "name": "AdamW",
+        "learning_rate": 0.0006,
+        "weight_decay": 0.1,
+        "beta1": 0.9,
+        "beta2": 0.95,
+        "grad_clip": 1.0,
+        "decay_lr": true,
+        "lr_decay_iters": 600000,
+        "min_lr": 6e-05
+    }
+}
+[2024-11-26 08:25:52.193756][WARNING][__main__.py:94] - Output dir: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:25:52.194333][INFO][trainer.py:248] - Initializing a new model from scratch
+[2024-11-26 08:25:53.374228][INFO][model.py:255] - number of parameters: 85.00M
+[2024-11-26 08:25:53.418882][INFO][trainer.py:266] - Model size: num_params=85003776
+[2024-11-26 08:25:53.422425][INFO][model.py:445] - num decayed parameter tensors: 50, with 85,771,008 parameters
+[2024-11-26 08:25:53.423066][INFO][model.py:449] - num non-decayed parameter tensors: 25, with 19,200 parameters
+[2024-11-26 08:25:54.227228][INFO][model.py:465] - using fused AdamW: True
+/home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/wordplay/trainer.py:303: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  grad_scaler = GradScaler(
+[2024-11-26 08:25:54.229195][CRITICAL][trainer.py:318] - "devid='cuda:0'"
+[2024-11-26 08:25:54.239233][INFO][trainer.py:358] - • self.model=GPT(
+  (transformer): ModuleDict(
+    (wte): Embedding(65, 768)
+    (wpe): Embedding(1024, 768)
+    (drop): Dropout(p=0.0, inplace=False)
+    (h): ModuleList(
+      (0-11): 12 x Block(
+        (ln_1): LayerNorm()
+        (attn): CausalSelfAttention(
+          (c_attn): Linear(in_features=768, out_features=2304, bias=False)
+          (c_proj): Linear(in_features=768, out_features=768, bias=False)
+          (attn_dropout): Dropout(p=0.0, inplace=False)
+          (resid_dropout): Dropout(p=0.0, inplace=False)
+        )
+        (ln_2): LayerNorm()
+        (mlp): MLP(
+          (c_fc): Linear(in_features=768, out_features=3072, bias=False)
+          (act_fn): GELU(approximate='none')
+          (c_proj): Linear(in_features=3072, out_features=768, bias=False)
+          (dropout): Dropout(p=0.0, inplace=False)
+        )
+      )
+    )
+    (ln_f): LayerNorm()
+  )
+  (lm_head): Linear(in_features=768, out_features=65, bias=False)
+)
+[2024-11-26 08:25:54.243907][INFO][trainer.py:359] - • self.grad_scaler=<torch.cuda.amp.grad_scaler.GradScaler object at 0x1453dc4616d0>
+[2024-11-26 08:25:54.244989][INFO][trainer.py:360] - • self.model_engine=DistributedDataParallel(
+  (module): GPT(
+    (transformer): ModuleDict(
+      (wte): Embedding(65, 768)
+      (wpe): Embedding(1024, 768)
+      (drop): Dropout(p=0.0, inplace=False)
+      (h): ModuleList(
+        (0-11): 12 x Block(
+          (ln_1): LayerNorm()
+          (attn): CausalSelfAttention(
+            (c_attn): Linear(in_features=768, out_features=2304, bias=False)
+            (c_proj): Linear(in_features=768, out_features=768, bias=False)
+            (attn_dropout): Dropout(p=0.0, inplace=False)
+            (resid_dropout): Dropout(p=0.0, inplace=False)
+          )
+          (ln_2): LayerNorm()
+          (mlp): MLP(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=False)
+            (act_fn): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=False)
+            (dropout): Dropout(p=0.0, inplace=False)
+          )
+        )
+      )
+      (ln_f): LayerNorm()
+    )
+    (lm_head): Linear(in_features=768, out_features=65, bias=False)
+  )
+)
+[2024-11-26 08:25:54.248743][INFO][trainer.py:361] - • self.optimizer=AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: True
+    lr: 0.0006
+    maximize: False
+    weight_decay: 0.1
+
+Parameter Group 1
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: True
+    lr: 0.0006
+    maximize: False
+    weight_decay: 0.0
+)
+[2024-11-26 08:25:54.355888][INFO][trainer.py:809] - Startup time: 9.2838
+                Training Legend                 
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        abbr ┃ desc                           ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│        step │ Current training iteration     │
+│        loss │ Loss value                     │
+│          dt │ Elapsed time per training step │
+│         dtf │ Elapsed time per forward step  │
+│         dtb │ Elapsed time per backward step │
+│         sps │ Samples per second             │
+│ sps_per_gpu │ Samples per second (per GPU)   │
+│         tps │ Tokens per second              │
+│ tps_per_gpu │ Tokens per second (per GPU)    │
+│         mfu │ Model flops utilization        │
+└─────────────┴────────────────────────────────┘
+[2024-11-26 08:25:55.855392][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:25:55.856704][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?jedd
+uudoduN
+zddBBtHddwzujHhNdjHHouNNuuuVIIGHt&zuuH NBjuuNOHHHmduuuddjjYttdKuIuuuI$uVmmjj?zm,,HKjYwwGoIIjuzNTHuz;NKItmju???pt??uttoooTr,,eIjHuH33wwWww
+t?BwN,3zKNudutyHHIppjHHu&&&GuooH
+mKjHHHHoojoHjHHN
+
+NGutGaajB3G3welu3qzttjjdooyRYHHzjttj,ZZZK3jHPuuuuuumlH
+[2024-11-26 08:26:35.994734][INFO][trainer.py:892] - step=10 loss=3.10174 dt=0.267613 dtf=0.00641622 dtb=0.0146099 sps=29.8939 sps_per_gpu=3.73674 tps=1.95913e+06 tps_per_gpu=244891 mfu=48.9208
+[2024-11-26 08:26:38.938054][INFO][trainer.py:892] - step=20 loss=2.68437 dt=0.290626 dtf=0.0062847 dtb=0.0158366 sps=27.5268 sps_per_gpu=3.44085 tps=1.804e+06 tps_per_gpu=225500 mfu=48.5334
+[2024-11-26 08:26:41.907113][INFO][trainer.py:892] - step=30 loss=2.58239 dt=0.303894 dtf=0.00645434 dtb=0.0153598 sps=26.325 sps_per_gpu=3.29062 tps=1.72523e+06 tps_per_gpu=215654 mfu=47.9881
+[2024-11-26 08:26:44.894213][INFO][trainer.py:892] - step=40 loss=2.50453 dt=0.317974 dtf=0.00675729 dtb=0.015719 sps=25.1593 sps_per_gpu=3.14492 tps=1.64884e+06 tps_per_gpu=206105 mfu=47.3066
+[2024-11-26 08:26:47.854241][INFO][trainer.py:892] - step=50 loss=2.49714 dt=0.309853 dtf=0.00686046 dtb=0.0141427 sps=25.8187 sps_per_gpu=3.22733 tps=1.69205e+06 tps_per_gpu=211507 mfu=46.8011
+[2024-11-26 08:26:50.875427][INFO][trainer.py:892] - step=60 loss=2.47482 dt=0.290941 dtf=0.0159093 dtb=0.0201971 sps=27.497 sps_per_gpu=3.43713 tps=1.80204e+06 tps_per_gpu=225255 mfu=46.6208
+[2024-11-26 08:26:53.893035][INFO][trainer.py:892] - step=70 loss=2.45968 dt=0.286582 dtf=0.00682038 dtb=0.0146126 sps=27.9152 sps_per_gpu=3.4894 tps=1.82945e+06 tps_per_gpu=228681 mfu=46.527
+[2024-11-26 08:26:56.896904][INFO][trainer.py:892] - step=80 loss=2.49644 dt=0.305594 dtf=0.00640307 dtb=0.0142638 sps=26.1785 sps_per_gpu=3.27231 tps=1.71563e+06 tps_per_gpu=214454 mfu=46.1583
+[2024-11-26 08:26:59.908637][INFO][trainer.py:892] - step=90 loss=2.46817 dt=0.336446 dtf=0.00679108 dtb=0.0217738 sps=23.7779 sps_per_gpu=2.97224 tps=1.55831e+06 tps_per_gpu=194789 mfu=45.4337
+[2024-11-26 08:27:02.949489][INFO][trainer.py:892] - step=100 loss=2.45805 dt=0.291352 dtf=0.00594604 dtb=0.0150325 sps=27.4582 sps_per_gpu=3.43228 tps=1.7995e+06 tps_per_gpu=224938 mfu=45.3838
+[2024-11-26 08:27:04.108629][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:27:04.110042][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+S:antht watly the thissh t herin bes st hantheror hand far alat mato outs a t by thanous wand, wicof fatellys fof s f iceene t t tham herere alloro wo ard
+Angsanthe
+Cl w t bat m llend,
+H:
+
+
+Whoure hes ndokem.
+Ass hy whares t che woraieve we s arind be
+CEE
+[2024-11-26 08:27:41.415307][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:27:41.417314][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:27:43.708546][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:27:46.770871][INFO][trainer.py:892] - step=110 loss=2.44581 dt=0.310067 dtf=0.00607978 dtb=0.0139808 sps=25.8009 sps_per_gpu=3.22511 tps=1.69089e+06 tps_per_gpu=211361 mfu=45.0677
+[2024-11-26 08:27:49.819290][INFO][trainer.py:892] - step=120 loss=2.41932 dt=0.289756 dtf=0.0060864 dtb=0.0136033 sps=27.6095 sps_per_gpu=3.45118 tps=1.80941e+06 tps_per_gpu=226177 mfu=45.0792
+[2024-11-26 08:27:52.859611][INFO][trainer.py:892] - step=130 loss=2.41215 dt=0.300155 dtf=0.00677351 dtb=0.0149807 sps=26.6529 sps_per_gpu=3.33161 tps=1.74672e+06 tps_per_gpu=218340 mfu=44.9329
+[2024-11-26 08:27:55.823644][INFO][trainer.py:892] - step=140 loss=2.3805 dt=0.296192 dtf=0.00658969 dtb=0.0144747 sps=27.0095 sps_per_gpu=3.37619 tps=1.7701e+06 tps_per_gpu=221262 mfu=44.8597
+[2024-11-26 08:27:58.805185][INFO][trainer.py:892] - step=150 loss=2.35987 dt=0.29177 dtf=0.00593138 dtb=0.022175 sps=27.4188 sps_per_gpu=3.42735 tps=1.79692e+06 tps_per_gpu=224615 mfu=44.8608
+[2024-11-26 08:28:01.781481][INFO][trainer.py:892] - step=160 loss=2.32763 dt=0.283145 dtf=0.00649397 dtb=0.0145886 sps=28.254 sps_per_gpu=3.53176 tps=1.85166e+06 tps_per_gpu=231457 mfu=44.9984
+[2024-11-26 08:28:04.814832][INFO][trainer.py:892] - step=170 loss=2.28005 dt=0.294238 dtf=0.00612663 dtb=0.0136933 sps=27.1889 sps_per_gpu=3.39861 tps=1.78185e+06 tps_per_gpu=222731 mfu=44.948
+[2024-11-26 08:28:07.837503][INFO][trainer.py:892] - step=180 loss=2.18967 dt=0.285932 dtf=0.00664169 dtb=0.0168089 sps=27.9787 sps_per_gpu=3.49734 tps=1.83361e+06 tps_per_gpu=229202 mfu=45.0318
+[2024-11-26 08:28:10.868237][INFO][trainer.py:892] - step=190 loss=2.14888 dt=0.296467 dtf=0.00642056 dtb=0.0152595 sps=26.9845 sps_per_gpu=3.37306 tps=1.76845e+06 tps_per_gpu=221057 mfu=44.9446
+[2024-11-26 08:28:13.905203][INFO][trainer.py:892] - step=200 loss=2.03182 dt=0.31628 dtf=0.0065139 dtb=0.0161865 sps=25.294 sps_per_gpu=3.16175 tps=1.65767e+06 tps_per_gpu=207209 mfu=44.5895
+[2024-11-26 08:28:15.046350][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:28:15.047934][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+
+LEOMESS:
+Lefll, andrwenr winthe ing momm, bomere din whrear hin the pom an shad af ance oul the swithe clods
+Thoun of ar supeand thing the mastir orty hy shee,
+Thouse den and notink he sty mear, ack.
+
+BRAMPER:
+I sor se be grongle fols thald a med ord the
+[2024-11-26 08:28:52.159827][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:28:52.161981][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:28:54.920358][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:28:57.944675][INFO][trainer.py:892] - step=210 loss=1.95709 dt=0.289392 dtf=0.00646615 dtb=0.0173767 sps=27.6441 sps_per_gpu=3.45552 tps=1.81169e+06 tps_per_gpu=226461 mfu=44.6544
+[2024-11-26 08:29:00.905393][INFO][trainer.py:892] - step=220 loss=1.8832 dt=0.302684 dtf=0.00607833 dtb=0.0159168 sps=26.4302 sps_per_gpu=3.30377 tps=1.73213e+06 tps_per_gpu=216516 mfu=44.5142
+[2024-11-26 08:29:03.871732][INFO][trainer.py:892] - step=230 loss=1.86355 dt=0.31159 dtf=0.00591465 dtb=0.0168462 sps=25.6747 sps_per_gpu=3.20934 tps=1.68262e+06 tps_per_gpu=210328 mfu=44.2644
+[2024-11-26 08:29:06.817870][INFO][trainer.py:892] - step=240 loss=1.78598 dt=0.27962 dtf=0.00617246 dtb=0.0144292 sps=28.6102 sps_per_gpu=3.57628 tps=1.875e+06 tps_per_gpu=234375 mfu=44.52
+[2024-11-26 08:29:09.774043][INFO][trainer.py:892] - step=250 loss=1.7234 dt=0.298672 dtf=0.0059376 dtb=0.0224482 sps=26.7852 sps_per_gpu=3.34816 tps=1.7554e+06 tps_per_gpu=219425 mfu=44.4513
+[2024-11-26 08:29:12.762280][INFO][trainer.py:892] - step=260 loss=1.67263 dt=0.291339 dtf=0.00632856 dtb=0.0159908 sps=27.4594 sps_per_gpu=3.43243 tps=1.79958e+06 tps_per_gpu=224948 mfu=44.4999
+[2024-11-26 08:29:15.799678][INFO][trainer.py:892] - step=270 loss=1.64266 dt=0.298852 dtf=0.00610848 dtb=0.0217231 sps=26.7691 sps_per_gpu=3.34614 tps=1.75434e+06 tps_per_gpu=219293 mfu=44.4306
+[2024-11-26 08:29:18.786247][INFO][trainer.py:892] - step=280 loss=1.58872 dt=0.297033 dtf=0.00654373 dtb=0.0153338 sps=26.933 sps_per_gpu=3.36663 tps=1.76508e+06 tps_per_gpu=220636 mfu=44.3951
+[2024-11-26 08:29:21.801892][INFO][trainer.py:892] - step=290 loss=1.52415 dt=0.300611 dtf=0.0059023 dtb=0.0213779 sps=26.6125 sps_per_gpu=3.32656 tps=1.74408e+06 tps_per_gpu=218010 mfu=44.3107
+[2024-11-26 08:29:24.804909][INFO][trainer.py:892] - step=300 loss=1.48534 dt=0.300331 dtf=0.00643423 dtb=0.0151003 sps=26.6373 sps_per_gpu=3.32967 tps=1.7457e+06 tps_per_gpu=218213 mfu=44.2387
+[2024-11-26 08:29:25.946025][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:29:25.947038][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+My mastaen? show so brother; sweet yet is lievy,
+The causter, first lived me, to nothing on rother,
+To more the brace their the brothes forther.
+
+LEONTES:
+My matter, thank when not you? my lord,
+You chambers the concepore your greenest.
+
+GLOUCESTER:
+Here 
+[2024-11-26 08:30:03.093811][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:30:03.095906][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:30:05.836378][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:30:08.845798][INFO][trainer.py:892] - step=310 loss=1.42359 dt=0.305193 dtf=0.00606002 dtb=0.0300434 sps=26.2129 sps_per_gpu=3.27661 tps=1.71789e+06 tps_per_gpu=214736 mfu=44.1046
+[2024-11-26 08:30:11.828110][INFO][trainer.py:892] - step=320 loss=1.38543 dt=0.288282 dtf=0.00631458 dtb=0.0171205 sps=27.7506 sps_per_gpu=3.46883 tps=1.81866e+06 tps_per_gpu=227333 mfu=44.2354
+[2024-11-26 08:30:14.881188][INFO][trainer.py:892] - step=330 loss=1.34177 dt=0.299897 dtf=0.00623058 dtb=0.013846 sps=26.6759 sps_per_gpu=3.33448 tps=1.74823e+06 tps_per_gpu=218529 mfu=44.1773
+[2024-11-26 08:30:17.879487][INFO][trainer.py:892] - step=340 loss=1.33184 dt=0.287244 dtf=0.00621402 dtb=0.0142132 sps=27.8509 sps_per_gpu=3.48136 tps=1.82524e+06 tps_per_gpu=228154 mfu=44.3174
+[2024-11-26 08:30:20.919731][INFO][trainer.py:892] - step=350 loss=1.30342 dt=0.312098 dtf=0.00914166 dtb=0.014956 sps=25.633 sps_per_gpu=3.20412 tps=1.67988e+06 tps_per_gpu=209985 mfu=44.0804
+[2024-11-26 08:30:23.954826][INFO][trainer.py:892] - step=360 loss=1.27977 dt=0.300952 dtf=0.00651149 dtb=0.0159875 sps=26.5823 sps_per_gpu=3.32279 tps=1.7421e+06 tps_per_gpu=217762 mfu=44.0225
+[2024-11-26 08:30:26.923237][INFO][trainer.py:892] - step=370 loss=1.23638 dt=0.292916 dtf=0.00611177 dtb=0.0138945 sps=27.3116 sps_per_gpu=3.41395 tps=1.78989e+06 tps_per_gpu=223737 mfu=44.0898
+[2024-11-26 08:30:29.894761][INFO][trainer.py:892] - step=380 loss=1.201 dt=0.303564 dtf=0.00650922 dtb=0.0150572 sps=26.3536 sps_per_gpu=3.2942 tps=1.72711e+06 tps_per_gpu=215889 mfu=43.9935
+[2024-11-26 08:30:32.869789][INFO][trainer.py:892] - step=390 loss=1.21111 dt=0.288553 dtf=0.00627823 dtb=0.0156958 sps=27.7246 sps_per_gpu=3.46557 tps=1.81696e+06 tps_per_gpu=227120 mfu=44.1312
+[2024-11-26 08:30:35.865359][INFO][trainer.py:892] - step=400 loss=1.1691 dt=0.297 dtf=0.00653045 dtb=0.0161242 sps=26.936 sps_per_gpu=3.367 tps=1.76528e+06 tps_per_gpu=220660 mfu=44.1261
+[2024-11-26 08:30:37.007569][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:30:37.009578][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+
+NORTHUMBERLAND:
+Believe lord, and Lord Hereford and Selbot,
+And at Wellisbia to aged to make my speak:
+O heaven me made to think it over:
+If imprison'd me, that will I make,
+Not the manner of my camen of
+To Benvolingbroke, with my gracious stone,
+The dev
+[2024-11-26 08:31:14.375825][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:31:14.377918][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:31:17.116840][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:31:20.141641][INFO][trainer.py:892] - step=410 loss=1.08517 dt=0.274356 dtf=0.00611856 dtb=0.0151191 sps=29.1592 sps_per_gpu=3.6449 tps=1.91098e+06 tps_per_gpu=238872 mfu=44.4854
+[2024-11-26 08:31:23.111526][INFO][trainer.py:892] - step=420 loss=1.03573 dt=0.321052 dtf=0.00600358 dtb=0.0132705 sps=24.9181 sps_per_gpu=3.11476 tps=1.63303e+06 tps_per_gpu=204129 mfu=44.1146
+[2024-11-26 08:31:26.117041][INFO][trainer.py:892] - step=430 loss=1.02525 dt=0.311056 dtf=0.00674944 dtb=0.0148863 sps=25.7188 sps_per_gpu=3.21485 tps=1.68551e+06 tps_per_gpu=210689 mfu=43.912
+[2024-11-26 08:31:29.129316][INFO][trainer.py:892] - step=440 loss=0.96108 dt=0.287567 dtf=0.00659273 dtb=0.0158324 sps=27.8196 sps_per_gpu=3.47745 tps=1.82319e+06 tps_per_gpu=227898 mfu=44.0734
+[2024-11-26 08:31:32.166404][INFO][trainer.py:892] - step=450 loss=0.928396 dt=0.326757 dtf=0.00607614 dtb=0.0135438 sps=24.483 sps_per_gpu=3.06038 tps=1.60452e+06 tps_per_gpu=200565 mfu=43.6727
+[2024-11-26 08:31:35.166197][INFO][trainer.py:892] - step=460 loss=0.883306 dt=0.306048 dtf=0.00624012 dtb=0.0213858 sps=26.1397 sps_per_gpu=3.26747 tps=1.71309e+06 tps_per_gpu=214137 mfu=43.5831
+[2024-11-26 08:31:38.155582][INFO][trainer.py:892] - step=470 loss=0.808916 dt=0.295378 dtf=0.0065728 dtb=0.0151383 sps=27.0839 sps_per_gpu=3.38549 tps=1.77497e+06 tps_per_gpu=221872 mfu=43.657
+[2024-11-26 08:31:41.195474][INFO][trainer.py:892] - step=480 loss=0.774078 dt=0.302914 dtf=0.00671375 dtb=0.0146117 sps=26.4101 sps_per_gpu=3.30127 tps=1.73082e+06 tps_per_gpu=216352 mfu=43.6133
+[2024-11-26 08:31:44.207580][INFO][trainer.py:892] - step=490 loss=0.680605 dt=0.296261 dtf=0.00638913 dtb=0.0142999 sps=27.0032 sps_per_gpu=3.3754 tps=1.76968e+06 tps_per_gpu=221211 mfu=43.671
+[2024-11-26 08:31:47.249520][INFO][trainer.py:892] - step=500 loss=0.616104 dt=0.294847 dtf=0.00641827 dtb=0.0135158 sps=27.1327 sps_per_gpu=3.39159 tps=1.77817e+06 tps_per_gpu=222271 mfu=43.7441
+[2024-11-26 08:31:48.407767][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:31:48.409869][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+My dear lips so dear state and he is recreation
+A capiple and sale-chased we his at Angelo.
+
+First Servant:
+A traitor ardly to 't a Christian card
+Send Padua! what was ready her.
+
+Second Servant:
+My good faith, 'tis Saint Paulia has you so--
+Faith, which 
+[2024-11-26 08:32:25.981510][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:32:25.983725][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:32:28.740379][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:32:31.774059][INFO][trainer.py:892] - step=510 loss=0.550761 dt=0.2979 dtf=0.00589617 dtb=0.0145497 sps=26.8547 sps_per_gpu=3.35684 tps=1.75995e+06 tps_per_gpu=219994 mfu=43.7644
+[2024-11-26 08:32:34.808869][INFO][trainer.py:892] - step=520 loss=0.475392 dt=0.311885 dtf=0.00643927 dtb=0.0142278 sps=25.6505 sps_per_gpu=3.20631 tps=1.68103e+06 tps_per_gpu=210129 mfu=43.5856
+[2024-11-26 08:32:37.819258][INFO][trainer.py:892] - step=530 loss=0.396323 dt=0.278545 dtf=0.00622443 dtb=0.0214918 sps=28.7207 sps_per_gpu=3.59008 tps=1.88224e+06 tps_per_gpu=235280 mfu=43.9272
+[2024-11-26 08:32:40.787886][INFO][trainer.py:892] - step=540 loss=0.317543 dt=0.291766 dtf=0.00632312 dtb=0.0214426 sps=27.4193 sps_per_gpu=3.42741 tps=1.79695e+06 tps_per_gpu=224619 mfu=44.0215
+[2024-11-26 08:32:43.830679][INFO][trainer.py:892] - step=550 loss=0.244311 dt=0.30272 dtf=0.00651052 dtb=0.0147233 sps=26.4271 sps_per_gpu=3.30338 tps=1.73192e+06 tps_per_gpu=216490 mfu=43.9441
+[2024-11-26 08:32:46.839753][INFO][trainer.py:892] - step=560 loss=0.213864 dt=0.298951 dtf=0.00646883 dtb=0.0145035 sps=26.7602 sps_per_gpu=3.34503 tps=1.75376e+06 tps_per_gpu=219220 mfu=43.929
+[2024-11-26 08:32:49.840797][INFO][trainer.py:892] - step=570 loss=0.163164 dt=0.310475 dtf=0.00647052 dtb=0.014917 sps=25.767 sps_per_gpu=3.22087 tps=1.68866e+06 tps_per_gpu=211083 mfu=43.7528
+[2024-11-26 08:32:52.817412][INFO][trainer.py:892] - step=580 loss=0.149109 dt=0.297635 dtf=0.00633426 dtb=0.0204497 sps=26.8786 sps_per_gpu=3.35982 tps=1.76152e+06 tps_per_gpu=220189 mfu=43.7761
+[2024-11-26 08:32:55.783832][INFO][trainer.py:892] - step=590 loss=0.119473 dt=0.299037 dtf=0.00648941 dtb=0.0213212 sps=26.7525 sps_per_gpu=3.34406 tps=1.75325e+06 tps_per_gpu=219157 mfu=43.7765
+[2024-11-26 08:32:58.768277][INFO][trainer.py:892] - step=600 loss=0.107399 dt=0.305632 dtf=0.00643656 dtb=0.0203274 sps=26.1753 sps_per_gpu=3.27191 tps=1.71542e+06 tps_per_gpu=214428 mfu=43.6824
+[2024-11-26 08:32:59.910568][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:32:59.912880][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+By will dream this at sickness I see this passience;
+The peercious so loud accustom'd it power.
+How now! gone, my lord!
+
+AUFIDIUS:
+Ay, that end my sister, I'll be not you your masters
+With him your grace: he has been dishonour'd,
+And with his lost deeds h
+
+[2024-11-26 08:33:37.458022][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:33:37.460137][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:33:40.205282][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:33:43.219423][INFO][trainer.py:892] - step=610 loss=0.079485 dt=0.294091 dtf=0.00588684 dtb=0.0215408 sps=27.2025 sps_per_gpu=3.40031 tps=1.78274e+06 tps_per_gpu=222843 mfu=43.7658
+[2024-11-26 08:33:46.254818][INFO][trainer.py:892] - step=620 loss=0.0695359 dt=0.287437 dtf=0.00688734 dtb=0.0169011 sps=27.8322 sps_per_gpu=3.47902 tps=1.82401e+06 tps_per_gpu=228001 mfu=43.9439
+[2024-11-26 08:33:49.237108][INFO][trainer.py:892] - step=630 loss=0.161953 dt=0.299345 dtf=0.00632407 dtb=0.0154133 sps=26.725 sps_per_gpu=3.34063 tps=1.75145e+06 tps_per_gpu=218932 mfu=43.923
+[2024-11-26 08:33:52.270546][INFO][trainer.py:892] - step=640 loss=0.100391 dt=0.316297 dtf=0.00594622 dtb=0.0137423 sps=25.2927 sps_per_gpu=3.16159 tps=1.65758e+06 tps_per_gpu=207198 mfu=43.6698
+[2024-11-26 08:33:55.233561][INFO][trainer.py:892] - step=650 loss=0.0645711 dt=0.294543 dtf=0.00646836 dtb=0.0151501 sps=27.1607 sps_per_gpu=3.39509 tps=1.78001e+06 tps_per_gpu=222501 mfu=43.7476
+[2024-11-26 08:33:58.224580][INFO][trainer.py:892] - step=660 loss=0.0596957 dt=0.291003 dtf=0.00627556 dtb=0.0153053 sps=27.4911 sps_per_gpu=3.43639 tps=1.80166e+06 tps_per_gpu=225207 mfu=43.8717
+[2024-11-26 08:34:01.218416][INFO][trainer.py:892] - step=670 loss=0.240125 dt=0.28937 dtf=0.00667909 dtb=0.0150008 sps=27.6462 sps_per_gpu=3.45578 tps=1.81182e+06 tps_per_gpu=226478 mfu=44.0088
+[2024-11-26 08:34:04.271111][INFO][trainer.py:892] - step=680 loss=0.164088 dt=0.308162 dtf=0.00658065 dtb=0.0151255 sps=25.9603 sps_per_gpu=3.24504 tps=1.70134e+06 tps_per_gpu=212667 mfu=43.8563
+[2024-11-26 08:34:07.258909][INFO][trainer.py:892] - step=690 loss=0.0807583 dt=0.303265 dtf=0.00619322 dtb=0.0151598 sps=26.3795 sps_per_gpu=3.29744 tps=1.72881e+06 tps_per_gpu=216101 mfu=43.7876
+[2024-11-26 08:34:10.252423][INFO][trainer.py:892] - step=700 loss=0.0599527 dt=0.301074 dtf=0.0068931 dtb=0.0156773 sps=26.5715 sps_per_gpu=3.32144 tps=1.74139e+06 tps_per_gpu=217674 mfu=43.7572
+[2024-11-26 08:34:11.409788][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:34:11.410717][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+AttONTAS:
+Most neither die!
+
+GREMIO:
+I say 'twere she master.
+
+TRANIO:
+Ay, master. I have of you reasons have suck'd
+To say hear his good for me to me her forget well?
+Well, urge your swas continue is with his pains
+Are that goad by here this married here
+[2024-11-26 08:34:48.751075][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:34:48.753177][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:34:51.512480][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:34:54.507581][INFO][trainer.py:892] - step=710 loss=0.0544843 dt=0.293738 dtf=0.00625121 dtb=0.0213642 sps=27.2351 sps_per_gpu=3.40439 tps=1.78488e+06 tps_per_gpu=223110 mfu=43.8385
+[2024-11-26 08:34:57.495531][INFO][trainer.py:892] - step=720 loss=0.0517295 dt=0.318075 dtf=0.00620925 dtb=0.0171829 sps=25.1513 sps_per_gpu=3.14392 tps=1.64832e+06 tps_per_gpu=206040 mfu=43.5706
+[2024-11-26 08:35:00.513202][INFO][trainer.py:892] - step=730 loss=0.0541872 dt=0.30871 dtf=0.00625842 dtb=0.0155134 sps=25.9143 sps_per_gpu=3.23928 tps=1.69832e+06 tps_per_gpu=212290 mfu=43.4544
+[2024-11-26 08:35:03.483271][INFO][trainer.py:892] - step=740 loss=0.193881 dt=0.290763 dtf=0.00629423 dtb=0.0230217 sps=27.5138 sps_per_gpu=3.43923 tps=1.80314e+06 tps_per_gpu=225393 mfu=43.6115
+[2024-11-26 08:35:06.460232][INFO][trainer.py:892] - step=750 loss=0.0859181 dt=0.3033 dtf=0.00639483 dtb=0.017015 sps=26.3765 sps_per_gpu=3.29707 tps=1.72861e+06 tps_per_gpu=216077 mfu=43.5668
+[2024-11-26 08:35:09.436038][INFO][trainer.py:892] - step=760 loss=0.0551316 dt=0.293891 dtf=0.0063531 dtb=0.0141108 sps=27.2209 sps_per_gpu=3.40262 tps=1.78395e+06 tps_per_gpu=222994 mfu=43.6648
+[2024-11-26 08:35:12.432995][INFO][trainer.py:892] - step=770 loss=0.0452449 dt=0.28877 dtf=0.00613182 dtb=0.0141727 sps=27.7037 sps_per_gpu=3.46296 tps=1.81559e+06 tps_per_gpu=226949 mfu=43.832
+[2024-11-26 08:35:15.406909][INFO][trainer.py:892] - step=780 loss=0.0422118 dt=0.292576 dtf=0.00659873 dtb=0.0208997 sps=27.3434 sps_per_gpu=3.41792 tps=1.79197e+06 tps_per_gpu=223997 mfu=43.9235
+[2024-11-26 08:35:18.376531][INFO][trainer.py:892] - step=790 loss=0.0437012 dt=0.301085 dtf=0.00634076 dtb=0.0139427 sps=26.5706 sps_per_gpu=3.32132 tps=1.74133e+06 tps_per_gpu=217666 mfu=43.8793
+[2024-11-26 08:35:21.351728][INFO][trainer.py:892] - step=800 loss=0.0484636 dt=0.294267 dtf=0.00607415 dtb=0.0139281 sps=27.1862 sps_per_gpu=3.39828 tps=1.78168e+06 tps_per_gpu=222710 mfu=43.9404
+[2024-11-26 08:35:22.495530][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:35:22.497481][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+
+VIRGILIA:
+A brother, but Dorsatio and dreams.
+
+VOLUMNIA:
+Indeed, if it be so, right is this anger hope,
+As chides this afternoon, though they be sold do
+To this submish, with my put many thing things:
+Let him shall seem sorrow and proof.
+
+LUCIO:
+
+ISABELL
+[2024-11-26 08:35:59.954832][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:35:59.956852][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:36:02.701104][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:36:05.680690][INFO][trainer.py:892] - step=810 loss=0.163949 dt=0.279593 dtf=0.00632104 dtb=0.0152994 sps=28.613 sps_per_gpu=3.57663 tps=1.87518e+06 tps_per_gpu=234398 mfu=44.2288
+[2024-11-26 08:36:08.659820][INFO][trainer.py:892] - step=820 loss=0.0545639 dt=0.293048 dtf=0.00617382 dtb=0.0266265 sps=27.2993 sps_per_gpu=3.41241 tps=1.78909e+06 tps_per_gpu=223636 mfu=44.2734
+[2024-11-26 08:36:11.647772][INFO][trainer.py:892] - step=830 loss=0.0424354 dt=0.294603 dtf=0.00630952 dtb=0.0150528 sps=27.1552 sps_per_gpu=3.39439 tps=1.77964e+06 tps_per_gpu=222455 mfu=44.2899
+[2024-11-26 08:36:14.622098][INFO][trainer.py:892] - step=840 loss=0.0410122 dt=0.319279 dtf=0.00666307 dtb=0.0210201 sps=25.0565 sps_per_gpu=3.13206 tps=1.6421e+06 tps_per_gpu=205263 mfu=43.9614
+[2024-11-26 08:36:17.611837][INFO][trainer.py:892] - step=850 loss=0.0356808 dt=0.295236 dtf=0.00703295 dtb=0.0146198 sps=27.097 sps_per_gpu=3.38712 tps=1.77583e+06 tps_per_gpu=221978 mfu=43.9996
+[2024-11-26 08:36:20.606480][INFO][trainer.py:892] - step=860 loss=0.0412638 dt=0.315093 dtf=0.00707557 dtb=0.0279317 sps=25.3894 sps_per_gpu=3.17367 tps=1.66392e+06 tps_per_gpu=207990 mfu=43.7546
+[2024-11-26 08:36:23.611624][INFO][trainer.py:892] - step=870 loss=0.0449875 dt=0.291443 dtf=0.00634298 dtb=0.0143552 sps=27.4496 sps_per_gpu=3.4312 tps=1.79894e+06 tps_per_gpu=224867 mfu=43.8712
+[2024-11-26 08:36:26.601364][INFO][trainer.py:892] - step=880 loss=0.209946 dt=0.296117 dtf=0.00611564 dtb=0.020279 sps=27.0164 sps_per_gpu=3.37705 tps=1.77055e+06 tps_per_gpu=221318 mfu=43.9053
+[2024-11-26 08:36:29.615498][INFO][trainer.py:892] - step=890 loss=0.0656398 dt=0.318162 dtf=0.00730216 dtb=0.0140886 sps=25.1444 sps_per_gpu=3.14305 tps=1.64786e+06 tps_per_gpu=205983 mfu=43.6296
+[2024-11-26 08:36:32.630049][INFO][trainer.py:892] - step=900 loss=0.0424803 dt=0.304053 dtf=0.00644524 dtb=0.0272997 sps=26.3112 sps_per_gpu=3.2889 tps=1.72433e+06 tps_per_gpu=215542 mfu=43.5724
+[2024-11-26 08:36:33.784816][INFO][trainer.py:827] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:36:33.786260][INFO][trainer.py:831] - ['response']:
+
+What is an LLM?
+
+HENRY BOLINGBROKE:
+If all is my coverding woes thus liege,
+His coming hither hath no further scope.
+
+HENRY BOLINGBROKE:
+Why, uncle, kind and Saint George to the Tower.
+
+NORTHUMBERLAND:
+I will be so barried as that vainly here.
+
+LORD ROSS:
+My Lord of Will
+[2024-11-26 08:37:11.852310][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:37:11.854387][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:37:14.603841][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+[2024-11-26 08:37:17.588667][INFO][trainer.py:892] - step=910 loss=0.035581 dt=0.291226 dtf=0.00633361 dtb=0.0147162 sps=27.47 sps_per_gpu=3.43376 tps=1.80028e+06 tps_per_gpu=225035 mfu=43.7106
+[2024-11-26 08:37:20.573717][INFO][trainer.py:892] - step=920 loss=0.0336991 dt=0.284831 dtf=0.00626095 dtb=0.0138505 sps=28.0869 sps_per_gpu=3.51086 tps=1.8407e+06 tps_per_gpu=230088 mfu=43.9359
+[2024-11-26 08:37:23.540365][INFO][trainer.py:892] - step=930 loss=0.0328406 dt=0.29624 dtf=0.00635237 dtb=0.014345 sps=27.0052 sps_per_gpu=3.37565 tps=1.76981e+06 tps_per_gpu=221226 mfu=43.9616
+[2024-11-26 08:37:26.519292][INFO][trainer.py:892] - step=940 loss=0.0357112 dt=0.295282 dtf=0.00601119 dtb=0.0137267 sps=27.0927 sps_per_gpu=3.38659 tps=1.77555e+06 tps_per_gpu=221943 mfu=43.9991
+[2024-11-26 08:37:29.496007][INFO][trainer.py:892] - step=950 loss=0.128904 dt=0.299984 dtf=0.0062552 dtb=0.0182563 sps=26.668 sps_per_gpu=3.33351 tps=1.74772e+06 tps_per_gpu=218465 mfu=43.9634
+[2024-11-26 08:37:32.478887][INFO][trainer.py:892] - step=960 loss=0.0516251 dt=0.295435 dtf=0.00611769 dtb=0.0206545 sps=27.0787 sps_per_gpu=3.38483 tps=1.77463e+06 tps_per_gpu=221829 mfu=43.9984
+[2024-11-26 08:37:35.452160][INFO][trainer.py:892] - step=970 loss=0.0353167 dt=0.296048 dtf=0.00625378 dtb=0.0138236 sps=27.0226 sps_per_gpu=3.37783 tps=1.77096e+06 tps_per_gpu=221369 mfu=44.0208
+[2024-11-26 08:37:38.442430][INFO][trainer.py:892] - step=980 loss=0.0317294 dt=0.298307 dtf=0.00647053 dtb=0.0144219 sps=26.818 sps_per_gpu=3.35225 tps=1.75754e+06 tps_per_gpu=219693 mfu=44.0074
+[2024-11-26 08:37:41.446121][INFO][trainer.py:892] - step=990 loss=0.0312021 dt=0.298061 dtf=0.00690829 dtb=0.0177891 sps=26.8401 sps_per_gpu=3.35502 tps=1.759e+06 tps_per_gpu=219874 mfu=43.999
+[2024-11-26 08:37:44.517636][INFO][trainer.py:892] - step=1000 loss=0.0313445 dt=0.591858 dtf=0.00645169 dtb=0.309803 sps=13.5168 sps_per_gpu=1.68959 tps=885834 tps_per_gpu=110729 mfu=41.8111
+[2024-11-26 08:37:45.670050][INFO][__main__.py:119] - ['prompt']: 'What is an LLM?'
+[2024-11-26 08:37:45.671198][INFO][__main__.py:120] - ['response']:
+
+What is an LLM?
+
+GLOUCESTER:
+The Tower, the Earl of Somerset, at the law come in.
+
+LADY ANNE:
+Why, then I will do what you have but me?
+
+GLOUCESTER:
+I give my serve my tlove profess.
+
+LADY ANNE:
+Why, that was he.
+
+GLOUCESTER:
+This is a fellow of thy rage,
+Longest live to
+[2024-11-26 08:37:45.675348][INFO][trainer.py:762] - Saving checkpoint to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45
+[2024-11-26 08:37:45.676050][INFO][trainer.py:763] - Saving model to: /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45/model.pth
+[2024-11-26 08:37:48.435342][INFO][configs.py:141] - Appending /home/prern003/LLM/ai-science-training-series/06_parallel_training/outputs/runs/pytorch/DDP/2024-11-26/08-25-45 to /home/prern003/LLM/ai-science-training-series/06_parallel_training/wordplay/src/ckpts/checkpoints.log
+wandb: - 0.000 MB of 0.000 MB uploaded
+wandb: Run history:
+wandb:                      Loss/iter ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:                     Loss/lossf █▇▇▇▇▆▆▆▅▅▅▅▄▄▄▄▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                       Loss/mfu █▇▆▅▄▄▄▄▄▃▄▄▃▃▃▃▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁
+wandb:                     Loss/train ████▅▅▅▅▄▄▄▄▃▃▃▃▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                       Loss/val ████▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▃▃▃▃▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇
+wandb:                  Timing/dt_avg ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:                 Timing/dt_iter ▁▂▂▂▂▂▁▁▁▂▂▂▂▁▂▁▁▁▂▂▂▂▂▂▂▂▁▂▂▁▁▂▂▂▂▂▁▂▂█
+wandb:                  Timing/dt_tot ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:                 Timing/dtb_avg ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:                 Timing/dtb_tot ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:                 Timing/dtf_avg ▁▁█▁▁▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▂▁▂▁▁▁▁
+wandb:                 Timing/dtf_tot ▁▁█▁▁▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▂▁▂▁▁▁▁
+wandb:                    Timing/iter ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:         Timing/samples_per_sec █▆▇▆▆▇▇▇▇▆▇▇▆▇▇▇█▇▆▇▇▇▇▇▇▆▇▆▆▇▇▇▇▆▇▆▇▇▇▁
+wandb: Timing/samples_per_sec_per_gpu █▆▇▆▆▇▇▇▇▆▇▇▆▇▇▇█▇▆▇▇▇▇▇▇▆▇▆▆▇▇▇▇▆▇▆▇▇▇▁
+wandb:            Timing/startup_time ▁
+wandb:          Timing/tokens_per_sec █▆▇▆▆▇▇▇▇▆▇▇▆▇▇▇█▇▆▇▇▇▇▇▇▆▇▆▆▇▇▇▇▆▇▆▇▇▇▁
+wandb:  Timing/tokens_per_sec_per_gpu █▆▇▆▆▇▇▇▇▆▇▇▆▇▇▇█▇▆▇▇▇▇▇▇▆▇▆▆▇▇▇▇▆▇▆▇▇▇▁
+wandb:                  Training/iter ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:                  Training/loss █▇▇▇▇▆▆▆▅▅▅▅▄▄▄▄▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              Training/loss_tot █▇▇▇▇▆▆▆▅▅▅▅▄▄▄▄▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                    Training/lr ▁▃▅▆████████████████████████████████████
+wandb: 
+wandb: Run summary:
+wandb:                      Loss/iter 1000
+wandb:                     Loss/lossf 0.03134
+wandb:                       Loss/mfu 41.8111
+wandb:                     Loss/train 0.04121
+wandb:                       Loss/val 3.77755
+wandb:                  Timing/dt_avg 0.15813
+wandb:                 Timing/dt_iter 0.59186
+wandb:                  Timing/dt_tot 0.31625
+wandb:                 Timing/dtb_avg 0.3098
+wandb:                 Timing/dtb_tot 0.3098
+wandb:                 Timing/dtf_avg 0.00645
+wandb:                 Timing/dtf_tot 0.00645
+wandb:                    Timing/iter 999
+wandb:         Timing/samples_per_sec 13.51675
+wandb: Timing/samples_per_sec_per_gpu 1.68959
+wandb:            Timing/startup_time 9.28379
+wandb:          Timing/tokens_per_sec 885833.81561
+wandb:  Timing/tokens_per_sec_per_gpu 110729.22695
+wandb:                  Training/iter 999
+wandb:                  Training/loss 0.03134
+wandb:              Training/loss_tot 0.03134
+wandb:                    Training/lr 0.0006

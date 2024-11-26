@@ -1,0 +1,17 @@
+What do you think is a particularly good use case for LLMs for science? How would you evaluate it? Your answer does not need to be in paragraphs. When you submit your homework form, you can link to a file in your Github repo where you wrote your answer.
+
+## Use case for LLMs for science:
+* LLMs can be used to develop structured manuals for software or standard operating procedures for a laboratory
+* It can be used for literature review and extracting data/methods
+* Summarizing a field spanned over decades, topic or trend analysis over the years 
+* It can be used for automation of 
+    * Experimental/simulation procedure
+    * Result analysis
+    * Documentation
+
+## LLM Model Evaluation:
+* Various metrics can be used for LLM evaluation:
+    * Accuracy ratio: if the ground truth is available, it can be used to calculate the accuracy
+    * F1 score: identifying false positive and false negative outputs
+    * Human evaluation
+    * Estimating the trustworthiness of the LLM with DecodingTrust
