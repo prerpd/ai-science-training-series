@@ -1,0 +1,152 @@
+Results:
+* On increasing batch size from 8 to 64, accuracy increased
+* On decreasing learning rate from 0.03 to 0.01, accuracy decreased
+* While on increasing learning rate from 0.03 to 0.05, accuracy decreased even further
+* Hence, 0.03 is the optimal learning rate
+* On increasing epoch from 10 to 20, accuracy increased
+
+
+Batch=8, Learning rate = 0.03, epoch = 10
+
+(poptorch33_env) prern003@gc-poplar-02:~/graphcore/examples/tutorials/simple_applications/pytorch/mnist$ /opt/slurm/bin/srun --ipus=1 python mnist_poptorch.py
+srun: job 28093 queued and waiting for resources
+srun: job 28093 has been allocated resources
+Epochs:   0%|          | 0/10 [00:00<?,[09:19:15.711] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 10
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]
+Epochs: 100%|██████████| 10/10 [01:30<00:00,  9.05s/it]
+  0%|          | 0/125 [00:00<?, ?it/s]                2024-11-26T09:20:46.648655Z PL:POPLIN    571995.571995 W: poplin::preplanConvolution() is deprecated! Use poplin::preplan() insteadaph compilation:   4%|▍         | 4/100 [00:00<00:03]
+                                                       2024-11-26T09:20:48.814684Z PL:POPLIN    571995.571995 W: poplin::preplanMatMuls() is deprecated! Use poplin::preplan() instead
+Graph compilation: 100%|██████████| 100/100 [00:14<00:00]
+ 85%|████████▍ | 106/125 [00:1TrainingModelWithLoss(:00]
+  (model): Network(
+    (layer1): Block(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer2): Block(
+      (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer3): Linear(in_features=1600, out_features=128, bias=True)
+    (layer3_act): ReLU()
+    (layer3_dropout): Dropout(p=0.5, inplace=False)
+    (layer4): Linear(in_features=128, out_features=10, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (loss): CrossEntropyLoss()
+)
+Accuracy on test set: 98.12%
+
+Batch=64, Learning rate = 0.03, epoch = 10
+
+Epochs:   0%|          | 0/10 [00:00<?,[09:24:46.202] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 10
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]
+Epochs: 100%|██████████| 10/10 [01:25<00:00,  8.60s/it]
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]                          
+ 85%|████████▍ | 106/125 [00:03<TrainingModelWithLoss(00]
+  (model): Network(
+    (layer1): Block(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer2): Block(
+      (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer3): Linear(in_features=1600, out_features=128, bias=True)
+    (layer3_act): ReLU()
+    (layer3_dropout): Dropout(p=0.5, inplace=False)
+    (layer4): Linear(in_features=128, out_features=10, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (loss): CrossEntropyLoss()
+)
+Accuracy on test set: 98.22%
+
+Batch=64, Learning rate = 0.01, epoch = 10
+
+Epochs:   0%|          | 0/10 [00:00<?,[09:27:41.405] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 10
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]
+Epochs: 100%|██████████| 10/10 [01:26<00:00,  8.65s/it]
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]                          
+ 86%|████████▋ | 108/125 [00:TrainingModelWithLoss(00:00]
+  (model): Network(
+    (layer1): Block(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer2): Block(
+      (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer3): Linear(in_features=1600, out_features=128, bias=True)
+    (layer3_act): ReLU()
+    (layer3_dropout): Dropout(p=0.5, inplace=False)
+    (layer4): Linear(in_features=128, out_features=10, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (loss): CrossEntropyLoss()
+)
+Accuracy on test set: 98.17%
+
+Batch=64, Learning rate = 0.05, epoch = 10
+
+Epochs:   0%|          | 0/10 [00:00<?,[09:30:10.546] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 10
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]
+Epochs: 100%|██████████| 10/10 [01:26<00:00,  8.63s/it]
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]                          
+ 85%|████████▍ | 106/125 [00:03<TrainingModelWithLoss(00]
+  (model): Network(
+    (layer1): Block(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer2): Block(
+      (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer3): Linear(in_features=1600, out_features=128, bias=True)
+    (layer3_act): ReLU()
+    (layer3_dropout): Dropout(p=0.5, inplace=False)
+    (layer4): Linear(in_features=128, out_features=10, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (loss): CrossEntropyLoss()
+)
+Accuracy on test set: 97.98%
+
+Batch=64, Learning rate = 0.01, epoch = 20
+
+Epochs:   0%|          | 0/10 [00:00<?,[09:34:17.026] [poptorch:cpp] [warning] [DISPATCHER] Type coerced from Long to Int for tensor id 10
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]
+Epochs: 100%|██████████| 10/10 [01:26<00:00,  8.61s/it]
+Graph compilation: 100%|██████████| 100/100 [00:00<00:00]                           
+TrainingModelWithLoss(%|██████████| 100/100 [00:00<00:00]
+  (model): Network(
+    (layer1): Block(
+      (conv): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer2): Block(
+      (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1))
+      (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (relu): ReLU()
+    )
+    (layer3): Linear(in_features=1600, out_features=128, bias=True)
+    (layer3_act): ReLU()
+    (layer3_dropout): Dropout(p=0.5, inplace=False)
+    (layer4): Linear(in_features=128, out_features=10, bias=True)
+    (softmax): Softmax(dim=1)
+  )
+  (loss): CrossEntropyLoss()
+)
+Accuracy on test set: 98.52%
